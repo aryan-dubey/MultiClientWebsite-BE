@@ -23,7 +23,7 @@ import com.multiclientweb.services.ProductMgmtServices;
 public class ProductMgmtController {
 	@Autowired
 	ProductMgmtServices productmgmtservices;
-	@PostMapping("/addproduct")
+	@PostMapping("/addproduct/{vendorId}")
 	public ResponseEntity addProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int vendorId) 
 	{		
         if( productmgmtservices.addProduct(productmgmt,vendorId))
@@ -34,7 +34,7 @@ public class ProductMgmtController {
 
         	return ResponseEntity.status(HttpStatus.FOUND).body("Product already exist");
 		}
-	@DeleteMapping("/delproduct/{id}/{vendorId}")
+	@DeleteMapping("/delproduct/{productId}/{vendorId}")
 	public ResponseEntity deleteProduct(@PathVariable int productId, @PathVariable int vendorId) 
 	{
 		productmgmtservices.deleteProduct(productId, vendorId);
