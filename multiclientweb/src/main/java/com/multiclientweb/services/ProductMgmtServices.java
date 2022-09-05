@@ -49,10 +49,10 @@ public class ProductMgmtServices {
 		//	throw new NotAdminException("Access Denied");
 		//} else if (
 				
-			if(productmgmtrepository.findById(vendorId).isPresent()) 
-			{
+//			if(productmgmtrepository.findById(vendorId).isPresent()) 
+//			{
 				productmgmtrepository.deleteById(vendorId);
-			}
+//			}
 	}
 	
 	public ProductMgmt updateProduct(ProductMgmt productmgmt, int vendorId) {
