@@ -67,7 +67,7 @@ public class ProductMgmtServices {
 			pm.setProductCost(productmgmt.getProductCost());
 			pm.setProductDescription(productmgmt.getProductDescription());
 			pm.setProductName(productmgmt.getProductName());
-			pm.setProductType(productmgmt.getProductType());
+			pm.setProductCategory(productmgmt.getProductCategory());
 			productmgmtrepository.save(pm);
 			System.out.println(pm.getProductName());
 			return pm;
