@@ -18,7 +18,7 @@ import com.multiclientweb.entity.ProductMgmt;
 import com.multiclientweb.services.ProductMgmtServices;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ProductMgmtController {
 	@Autowired
