@@ -23,7 +23,7 @@ public class ProductMgmt
 	   )
 	private int productId;
 	private String productName;
-	private String productType;
+	private String productCategory;
 	private String productDescription;
 	private double productCost;
 	
@@ -41,11 +41,11 @@ public class ProductMgmt
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getProductType() {
-		return productType;
+	public String getProductCategory() {
+		return productCategory;
 	}
-	public void setProductType(String productType) {
-		this.productType = productType;
+	public void setProductCategory(String productCategory) {
+		this.productCategory = productCategory;
 	}
 	public String getProductDescription() {
 		return productDescription;
@@ -66,22 +66,22 @@ public class ProductMgmt
 	
 	
 	
-	public ProductMgmt(int productId, String productName, String productType, String productDescription,
+	public ProductMgmt(int productId, String productName, String productCategory, String productDescription,
 			double productCost) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
-		this.productType = productType;
+		this.productCategory = productCategory;
 		this.productDescription = productDescription;
 		this.productCost = productCost;
 	}
 	
 	
 	
-	public ProductMgmt(String productName, String productType, String productDescription, double productCost) {
+	public ProductMgmt(String productName, String productCategory, String productDescription, double productCost) {
 		super();
 		this.productName = productName;
-		this.productType = productType;
+		this.productCategory = productCategory;
 		this.productDescription = productDescription;
 		this.productCost = productCost;
 	}
