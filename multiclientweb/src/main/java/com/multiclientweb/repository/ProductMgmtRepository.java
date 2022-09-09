@@ -1,17 +1,14 @@
 package com.multiclientweb.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.multiclientweb.entity.ProductMgmt;
 
-public interface ProductMgmtRepository {
+public interface ProductMgmtRepository extends JpaRepository<ProductMgmt, Integer>
+{
 
-	static ProductMgmt findByProductName(String productName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	ProductMgmt findByProductName(String productName);
+	ProductMgmt findByProductId(int productId);
 
-	static void save(ProductMgmt productmgmt) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
