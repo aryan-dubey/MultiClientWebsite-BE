@@ -66,15 +66,15 @@ public class ProductMgmt
 	
 	
 	
-	public ProductMgmt(int productId, String productName, String productCategory, String productDescription,
-			double productCost) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.productCategory = productCategory;
-		this.productDescription = productDescription;
-		this.productCost = productCost;
-	}
+//	public ProductMgmt(int productId, String productName, String productCategory, String productDescription,
+//			double productCost) {
+//		super();
+//		this.productId = productId;
+//		this.productName = productName;
+//		this.productCategory = productCategory;
+//		this.productDescription = productDescription;
+//		this.productCost = productCost;
+//	}
 	
 	
 	

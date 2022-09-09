@@ -51,13 +51,13 @@ public class ProductMgmtServices {
 				
 //			if(productmgmtrepository.findById(vendorId).isPresent()) 
 //			{
-				productmgmtrepository.deleteById(vendorId);
+				productmgmtrepository.deleteById(productId);
 //			}
 	}
 	
-	public ProductMgmt updateProduct(ProductMgmt productmgmt, int vendorId) {
+	public ProductMgmt updateProduct(ProductMgmt productmgmt, int vendorId, int productId) {
 //		vendorId ven = customerRepository.findById(vendorId).get();
-		ProductMgmt pm = productmgmtrepository.findById(productmgmt.getProductId()).get();
+		ProductMgmt pm = productmgmtrepository.findByProductId(productId);
 //		if (cust == null) {
 //			throw new ResourceNotFoundException("User not found ");
 //		} else if (cust.gettype().equals("user")) {
@@ -69,7 +69,7 @@ public class ProductMgmtServices {
 			pm.setProductName(productmgmt.getProductName());
 			pm.setProductCategory(productmgmt.getProductCategory());
 			productmgmtrepository.save(pm);
-			System.out.println(pm.getProductName());
+			//System.out.println(pm.getProductName());
 			return pm;
 			
 		}

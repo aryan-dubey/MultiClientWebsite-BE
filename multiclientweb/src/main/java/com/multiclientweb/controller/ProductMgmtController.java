@@ -34,19 +34,31 @@ public class ProductMgmtController {
 
         	return ResponseEntity.status(HttpStatus.FOUND).body("Product already exist");
 		}
-	@DeleteMapping("/delproduct/{productId}/{vendorId}")
-	public ResponseEntity deleteProduct(@PathVariable int productId, @PathVariable int vendorId) 
+	
+	
+	
+	
+	@DeleteMapping("/delproduct/{vendorId}/{productId}")
+	public ResponseEntity deleteProduct(@PathVariable int vendorId, @PathVariable int productId) 
 	{
 		productmgmtservices.deleteProduct(productId, vendorId);
 		return ResponseEntity.status(HttpStatus.OK).body("Product Deleted");
 		
 	}
-	@PutMapping("/updateproduct/{vendorId}")
-	public ResponseEntity updateProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int vendorId) 
+	
+	
+	
+	@PutMapping("/updateproduct/{vendorId}/{productId}")
+	public ResponseEntity updateProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int vendorId, @PathVariable int productId) 
 	{		
         
-        return ResponseEntity.status(HttpStatus.OK).body(productmgmtservices.updateProduct(productmgmt,vendorId));
+        return ResponseEntity.status(HttpStatus.OK).body(productmgmtservices.updateProduct(productmgmt,vendorId,productId));
 	}
+	
+	
+	
+	
+	
 	@GetMapping("/viewproduct")
 	public List viewProduct()
 	{

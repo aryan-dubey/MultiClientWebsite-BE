@@ -8,6 +8,7 @@ public interface ProductMgmtRepository extends JpaRepository<ProductMgmt, Intege
 {
 
 	ProductMgmt findByProductName(String productName);
+	ProductMgmt findByProductId(int productId);
 
 
 }
