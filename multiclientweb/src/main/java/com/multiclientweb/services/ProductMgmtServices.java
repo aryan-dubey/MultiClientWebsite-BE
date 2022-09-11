@@ -20,7 +20,7 @@ public class ProductMgmtServices {
 	@Autowired 
 	ProductMgmtRepository productmgmtrepository;
 
-	public boolean addProduct(ProductMgmt productmgmt, int vendorId) {
+	public boolean addProduct(ProductMgmt productmgmt) {
 		ProductMgmt pm = productmgmtrepository.findByProductName(productmgmt.getProductName());
 
 		//vendor ven = AppUserRepository.findById(vendorId).get();
@@ -41,7 +41,7 @@ public class ProductMgmtServices {
 
 	
 	
-	public void deleteProduct(int productId, int vendorId) {
+	public void deleteProduct(int productId) {
 		//vendorId ven = customerRepository.findById(vendorId).get();
 		//if (ven == null) {
 		//	throw new ResourceNotFoundException("User not found ");
@@ -55,7 +55,7 @@ public class ProductMgmtServices {
 //			}
 	}
 	
-	public ProductMgmt updateProduct(ProductMgmt productmgmt, int vendorId, int productId) {
+	public ProductMgmt updateProduct(ProductMgmt productmgmt, int productId) {
 //		vendorId ven = customerRepository.findById(vendorId).get();
 		ProductMgmt pm = productmgmtrepository.findByProductId(productId);
 //		if (cust == null) {

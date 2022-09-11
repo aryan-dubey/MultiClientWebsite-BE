@@ -23,10 +23,10 @@ import com.multiclientweb.services.ProductMgmtServices;
 public class ProductMgmtController {
 	@Autowired
 	ProductMgmtServices productmgmtservices;
-	@PostMapping("/addproduct/{vendorId}")
-	public ResponseEntity addProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int vendorId) 
+	@PostMapping("/api/auth/addproduct")
+	public ResponseEntity addProduct(@RequestBody ProductMgmt productmgmt) 
 	{		
-        if( productmgmtservices.addProduct(productmgmt,vendorId))
+        if( productmgmtservices.addProduct(productmgmt))
         {
             return ResponseEntity.status(HttpStatus.OK).body(productmgmt);
 
@@ -38,28 +38,28 @@ public class ProductMgmtController {
 	
 	
 	
-	@DeleteMapping("/delproduct/{vendorId}/{productId}")
-	public ResponseEntity deleteProduct(@PathVariable int vendorId, @PathVariable int productId) 
+	@DeleteMapping("/api/auth/delproduct/{productId}")
+	public ResponseEntity deleteProduct(@PathVariable int productId) 
 	{
-		productmgmtservices.deleteProduct(productId, vendorId);
+		productmgmtservices.deleteProduct(productId);
 		return ResponseEntity.status(HttpStatus.OK).body("Product Deleted");
 		
 	}
 	
 	
 	
-	@PutMapping("/updateproduct/{vendorId}/{productId}")
-	public ResponseEntity updateProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int vendorId, @PathVariable int productId) 
+	@PutMapping("/api/auth/updateproduct/{productId}")
+	public ResponseEntity updateProduct(@RequestBody ProductMgmt productmgmt,@PathVariable int productId) 
 	{		
         
-        return ResponseEntity.status(HttpStatus.OK).body(productmgmtservices.updateProduct(productmgmt,vendorId,productId));
+        return ResponseEntity.status(HttpStatus.OK).body(productmgmtservices.updateProduct(productmgmt,productId));
 	}
 	
 	
 	
 	
 	
-	@GetMapping("/viewproduct")
+	@GetMapping("/api/auth/viewproduct")
 	public List viewProduct()
 	{
 		return productmgmtservices.viewProductList(	);
